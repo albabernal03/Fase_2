@@ -18,7 +18,10 @@ df= pd.DataFrame()
 for i in archivos:
     archivo=pd.read_csv(i)
     df= pd.concat([df,archivo])
-    print(df)
+    df.to_csv('datos_archivos.csv')
+    
+
+
     
 
 
