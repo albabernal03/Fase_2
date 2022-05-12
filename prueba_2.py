@@ -19,7 +19,7 @@ df= pd.DataFrame()
 for i in archivos:
     archivo=pd.read_csv(i)
     df= pd.concat([df,archivo])
-    df.to_csv('datos_archivo.csv')
+    df.to_csv('datos_archivo_ETFs.csv')
     
 
     
