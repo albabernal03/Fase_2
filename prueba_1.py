@@ -15,7 +15,7 @@ def ruta_carpeta_ETFs():
     return y
 ruta_carpeta_ETFs
 
-def union_archivos_ETFs():
+def union_archivos_ETFs(path):
     archivos= [ x for x in os.listdir() if re.search('.txt',x)]
     print(archivos)
     df= pd.DataFrame()
@@ -24,7 +24,7 @@ def union_archivos_ETFs():
         df= pd.concat([df,archivo])
         df.to_csv('datos_archivo_ETFs.csv')
     return df
-union_archivos_ETFs()
+union_archivos_ETFs(ruta_carpeta_ETFs())
 
 
 
