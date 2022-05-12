@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import re
 
+#PASO 1: Meter todos los archivos en un dataframe
 x= %pwd #para ver la ruta de trabajo
 print(x)
 
@@ -18,9 +19,8 @@ df= pd.DataFrame()
 for i in archivos:
     archivo=pd.read_csv(i)
     df= pd.concat([df,archivo])
-    df.to_csv('datos_archivos.csv')
+    df.to_csv('datos_archivo.csv')
     
-
 
     
 
