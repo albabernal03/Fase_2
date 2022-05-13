@@ -103,9 +103,10 @@ def plot_train_test(train, test, date_split):
    
 
 plot_train_test(train, test, date_split)
+```
 <img width="1015" alt="image" src="https://user-images.githubusercontent.com/91721668/168247765-1f7e70d5-356f-4e67-9c8b-11b505ab33f5.png">
 
-``` 
+ 
 # 6. Crearemos unas clases donde obtendremos valores que utilizaremos en una gráfica más tarde
 
 ``` 
@@ -304,9 +305,10 @@ def plot_loss_reward(total_losses, total_rewards):
     
 
 plot_loss_reward(total_losses, total_rewards)
+``` 
 <img width="905" alt="image" src="https://user-images.githubusercontent.com/91721668/168247864-4550360c-2322-4efd-9e35-12e15cabfe4e.png">
 
-``` 
+ 
 
 # 8. Creamos una función que muestra las subidas y bajadas de 3 valores y comparándolos
 ``` 
@@ -394,11 +396,11 @@ def plot_train_test_by_q(train_env, test_env, Q, algorithm_name):
     
 
 plot_train_test_by_q(Environment1(train), Environment1(test), Q, 'DQN')
-
+```
 <img width="962" alt="image" src="https://user-images.githubusercontent.com/91721668/168245039-7aef1dee-d3bd-466f-8fe4-5fc50e7cbef5.png">
 
 
-``` 
+
 # 9. Creamos una función con clases para actualizar la gráfica del paso 7
 ```
 
@@ -530,16 +532,17 @@ def train_ddqn(env):
 
 Q, total_losses, total_rewards = train_ddqn(Environment1(train))
 
-<img width="989" alt="image" src="https://user-images.githubusercontent.com/91721668/168248006-35df2917-ed4c-4ac3-828a-5d5f1d0582f7.png">
-
 plot_loss_reward(total_losses, total_rewards)
-``` 
+```
+ <img width="989" alt="image" src="https://user-images.githubusercontent.com/91721668/168248006-35df2917-ed4c-4ac3-828a-5d5f1d0582f7.png">
+
 # 10. Printeamos otra función que actualiza el paso 8
 ``` 
 plot_train_test_by_q(Environment1(train), Environment1(test), Q, 'Double DQN')
+```
 <img width="858" alt="image" src="https://user-images.githubusercontent.com/91721668/168248183-c28cee47-6b67-41f0-82df-300565fba6fc.png">
 
-``` 
+ 
 # 11. Creamos otras funciones para actualizar las últimas dos gráficas
 ``` 
 def train_dddqn(env):
@@ -702,12 +705,12 @@ def train_dddqn(env):
 Q, total_losses, total_rewards = train_dddqn(Environment1(train))
 
 plot_loss_reward(total_losses, total_rewards)
-<img width="866" alt="image" src="https://user-images.githubusercontent.com/91721668/168248423-ebd6a7a2-7a13-4fef-9b59-9bd24cd2e942.png">
 
 plot_train_test_by_q(Environment1(train), Environment1(test), Q, 'Dueling Double DQN')
+``` 
+<img width="866" alt="image" src="https://user-images.githubusercontent.com/91721668/168248423-ebd6a7a2-7a13-4fef-9b59-9bd24cd2e942.png">
 
 <img width="1003" alt="image" src="https://user-images.githubusercontent.com/91721668/168248487-3ca033a5-ae0c-41d8-b791-c1bba5e33356.png">
 
 
-``` 
 
