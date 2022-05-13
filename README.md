@@ -395,8 +395,8 @@ plot_train_test_by_q(Environment1(train), Environment1(test), Q, 'DQN')
 
 
 ``` 
-# %% [code] {"jupyter":{"outputs_hidden":true}}
-# Double DQN
+# 9. Creamos una función con clases para actualizar la gráfica del paso 7
+```
 
 def train_ddqn(env):
 
@@ -524,18 +524,17 @@ def train_ddqn(env):
             
     return Q, total_losses, total_rewards
 
-# %% [code]
 Q, total_losses, total_rewards = train_ddqn(Environment1(train))
 
-# %% [code]
 plot_loss_reward(total_losses, total_rewards)
-
-# %% [code]
+``` 
+# 10. Printeamos otra función que actualiza el paso 8
+``` 
 plot_train_test_by_q(Environment1(train), Environment1(test), Q, 'Double DQN')
 
-# %% [code] {"jupyter":{"outputs_hidden":true}}
-# Dueling Double DQN
-
+``` 
+# 11. Creamos otras funciones para actualizar las últimas dos gráficas
+``` 
 def train_dddqn(env):
 
     """ <<< Double DQN -> Dueling Double DQN
@@ -693,13 +692,11 @@ def train_dddqn(env):
             
     return Q, total_losses, total_rewards
 
-# %% [code]
 Q, total_losses, total_rewards = train_dddqn(Environment1(train))
 
-# %% [code]
 plot_loss_reward(total_losses, total_rewards)
 
-# %% [code]
 plot_train_test_by_q(Environment1(train), Environment1(test), Q, 'Dueling Double DQN')
 
-# %% [code] {"jupyter":{"outputs_hidden":true}}
+``` 
+
