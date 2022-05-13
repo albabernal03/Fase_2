@@ -534,13 +534,13 @@ Q, total_losses, total_rewards = train_ddqn(Environment1(train))
 
 plot_loss_reward(total_losses, total_rewards)
 ```
- <img width="989" alt="image" src="https://user-images.githubusercontent.com/91721668/168248006-35df2917-ed4c-4ac3-828a-5d5f1d0582f7.png">
+<img width="858" alt="image" src="https://user-images.githubusercontent.com/91721668/168248183-c28cee47-6b67-41f0-82df-300565fba6fc.png">
 
 # 10. Printeamos otra función que actualiza el paso 8
 ``` 
 plot_train_test_by_q(Environment1(train), Environment1(test), Q, 'Double DQN')
 ```
-<img width="858" alt="image" src="https://user-images.githubusercontent.com/91721668/168248183-c28cee47-6b67-41f0-82df-300565fba6fc.png">
+ <img width="989" alt="image" src="https://user-images.githubusercontent.com/91721668/168248006-35df2917-ed4c-4ac3-828a-5d5f1d0582f7.png">
 
  
 # 11. Creamos otras funciones para actualizar las últimas dos gráficas
