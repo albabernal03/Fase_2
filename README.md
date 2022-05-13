@@ -63,24 +63,26 @@ union_archivos_stocks(ruta_carpeta_Stocks())
 
 ```
 
+# 3. Vuelve a leer el csv esta vez ordenándolo por fecha, de menor a mayor, y además crea una tabla
 
-
-
-
-
+```
 data = pd.read_csv('../input/Data/Stocks/goog.us.txt')
 data['Date'] = pd.to_datetime(data['Date'])
 data = data.set_index('Date')
 print(data.index.min(), data.index.max())
-data.head()
+data.head() #.head separa por trozos devolviendo los primeros elementos de la estructura
+```
 
-# %% [code]
+# 4. Separamos el csv por la fecha del 2016 
+``` 
 date_split = '2016-01-01'
 train = data[:date_split]
 test = data[date_split:]
-len(train), len(test)
+len(train), len(test) #mira solo el 2016
+```
+# 5. Creamos una función que devuelve una gráfica dinámica obtenida a partir de los datos del paso 3.
 
-# %% [code] {"jupyter":{"outputs_hidden":true}}
+``` 
 def plot_train_test(train, test, date_split):
     
     data = [
@@ -98,12 +100,13 @@ def plot_train_test(train, test, date_split):
     }
     figure = Figure(data=data, layout=layout)
     iplot(figure)
-    
+   
 
-# %% [code]
 plot_train_test(train, test, date_split)
+``` 
+# 6. Crearemos unas clases donde obtendremos valores que utilizaremos en una gráfica más tarde
 
-# %% [code] {"jupyter":{"outputs_hidden":true}}
+``` 
 class Environment1:
     
     def __init__(self, data, history_t=90):
@@ -281,10 +284,12 @@ def train_dqn(env):
     return Q, total_losses, total_rewards
     
 
-# %% [code]
 Q, total_losses, total_rewards = train_dqn(Environment1(train))
+``` 
 
-# %% [code] {"jupyter":{"outputs_hidden":true}}
+# 7. Creamos una función con los valores del paso 6 obteniendo una gráfica de las ganancias y las pérdidas
+
+```
 def plot_loss_reward(total_losses, total_rewards):
 
     figure = tools.make_subplots(rows=1, cols=2, subplot_titles=('loss', 'reward'), print_grid=False)
@@ -296,10 +301,11 @@ def plot_loss_reward(total_losses, total_rewards):
     iplot(figure)
     
 
-# %% [code]
 plot_loss_reward(total_losses, total_rewards)
+``` 
 
-# %% [code] {"jupyter":{"outputs_hidden":true}}
+# 8. Creamos una función que muestra las subidas y bajadas de 3 valores y comparándolos
+``` 
 def plot_train_test_by_q(train_env, test_env, Q, algorithm_name):
     
     # train
@@ -383,9 +389,12 @@ def plot_train_test_by_q(train_env, test_env, Q, algorithm_name):
     iplot(figure)
     
 
-# %% [code]
 plot_train_test_by_q(Environment1(train), Environment1(test), Q, 'DQN')
 
+<img width="962" alt="image" src="https://user-images.githubusercontent.com/91721668/168245039-7aef1dee-d3bd-466f-8fe4-5fc50e7cbef5.png">
+
+
+``` 
 # %% [code] {"jupyter":{"outputs_hidden":true}}
 # Double DQN
 
